@@ -1,0 +1,87 @@
+create database Pollera
+go
+
+use Pollera
+go
+
+create table control_RBD_Frituras
+(
+	ID int identity(1,1) not null primary key,
+	Dia date not null,
+	pie_pollo int not null,
+	por_papas int not null,
+	fri_extras varchar(20) not null,
+	tot_fritura int not null,
+	acum int not null,
+	cam_rbd datetime,
+	sac_emp int
+)
+go
+
+create table controles
+(
+	ID int identity(1,1) primary key,
+	factura varchar(20) not null,
+	alim_elab varchar(10) not null,
+	alim_entr varchar(10) not null,
+	coor_resp varchar(10) not null,
+	tel_cont varchar(9) not null,
+	fecha datetime,
+	hor_elab time,
+	hor_desp time,
+	hor_entr time
+)
+go
+
+create table recepcion_pedidos
+(
+	ID int identity(1,1) primary key,
+	num_pedido int,
+	dia	varchar(10),
+	fecha date,
+	prod varchar(30) not null,
+	cant int not null,
+	peso decimal(10,2),
+	vencimiento date
+)
+go
+
+create table pedidos
+(
+ID int identity(1,1)primary key,
+cant_soli int not null,
+cant_reci int not null
+)
+go
+
+create table control_mensual
+(
+ID  int identity(1,1)primary key,
+cod_emp int not null,
+Nom_emp varchar(30) not null,
+Tur_emp varchar(30) not null,
+Tel_emp int
+)
+go
+
+create table controle_pollo_refrigerado
+(
+ID int identity(1,1)primary key,
+Nom_emp varchar(30) not null,
+fecha date,
+prod varchar(30) not null,
+inv_am int not null,
+ing int not null,
+inv_pm int not null,
+dif int
+)
+go
+
+create table refrescos
+(
+ID int identity(1,1)primary key,
+Nom_emp varchar(30)not null,
+fecha varchar(30)not null,
+prod varchar(30)not null
+)
+go
