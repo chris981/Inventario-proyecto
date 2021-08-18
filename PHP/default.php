@@ -14,5 +14,6 @@ Password: <input type="text" name="pass" class=" w3-input" style="width:50%" req
 <input type="submit" class="w3-button w3-round w3-orange w3-section" value="Ingresar">
 <input type="reset" class="w3-button w3-round w3-orange w3-section" value="Cancelar">
 </form>
+
 </body>
 </html> 
