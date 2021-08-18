@@ -17,7 +17,7 @@
 <div class="w3-row w3-section">
   <div class="w3-col" style="width:50px"></div>
     <div class="w3-rest">
-      <input class="w3-input w3-border" name="psw" type="text" placeholder="Clave" required>
+      <input class="w3-input w3-border" name="psw" type="password" placeholder="Clave" required>
     </div>
 </div>
 <p class="w3-center">
