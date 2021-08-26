@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (isset($_SESSION['usuario']))
+	if (!isset($_SESSION['usuario']))
 	{
 		header("location: ../index.php");	
     }else
@@ -44,8 +44,11 @@
             <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
         </div>
     </div>
+    <?php
+        // Copiar siempre
+    ?>
     <div class="w3-card w3-margin w3-center">
-        <h2>Mantenimiento a Usuarios</h2>
+        <b><h2>Mantenimiento a Usuarios</h2></b>
     </div>
     <div>
         <table>
@@ -56,7 +59,7 @@
                             <tr>
                                 <td><b>Codigo Empleado:</b></td>
                                 <td>
-                                    <input class="w3-input w3-border" type="text" name="codigo_empleado">
+                                    <input class="w3-input w3-border" type="text" name="codigo_empleado" value="<?php echo date("Y/m/d");?>" disabled> 
                                 </td>
                             </tr>
                             <tr>
@@ -106,6 +109,8 @@
                     <div>
                         <table class="w3-table-all">
                             <?php
+
+                            //Codigo PHP para Tablas
                                 echo 
                                     "<tr>
                                         <th>Codigo</th>
@@ -126,7 +131,7 @@
             </tr>
             <tr>
                 <td>
-                    <button class="w3-button w3-round w3-orange w3-section">Nuevo</button>
+                    <button class="w3-button w3-round w3-orange w3-section"  type="" formmethod="POST" >Nuevo</button>
                     <button class="w3-button w3-round w3-orange w3-section">Agregar</button>
                     <button class="w3-button w3-round w3-orange w3-section">Modificar</button>
                     <button class="w3-button w3-round w3-orange w3-section">Eliminar</button>
