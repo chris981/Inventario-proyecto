@@ -75,6 +75,8 @@ create table Detalle_ventas
 create table Tabla_Empleados
 (
 	cod_emp int auto_increment not null primary key,
+	usu_emp varchar(30) not null,
+	cont_emp varchar(30) not null,
 	nom_emp varchar(30) not null,
 	ape_emp varchar(30) not null,
 	res_emp varchar(30),
@@ -127,7 +129,7 @@ create table Tabla_Freidoras
 );
 
 -- SQLINES DEMO *** mato Fechas (Dia,Mes,Año)
-set dateformat dmy;
+
 
 -- SQLINES DEMO *** iento Almacenado Para Mantenimiento Tabla Control Frituras
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
