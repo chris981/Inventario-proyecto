@@ -1,4 +1,4 @@
-create database dbPollera
+create database dbPollera;
  
 
 use dbpollera;
@@ -125,7 +125,7 @@ create table Tabla_Registro_Compras
 create table Tabla_Freidoras
 (
 	cod_fre int auto_increment not null primary key,
-	info_fre varchar(30) not null,
+	info_fre varchar(30) not null
 );
 
 -- SQLINES DEMO *** mato Fechas (Dia,Mes,Año)
