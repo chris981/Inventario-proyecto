@@ -24,7 +24,7 @@
     //Iniciamos programaciones
     require "conexion.php";
     try {
-        $query = "CALL SP_freidora($codigo_freidora,'$Informacion','$Tipo_Accion')";
+        $query = "CALL SP_freidoras($codigo_freidora,'$Informacion','$Tipo_Accion')";
         $resultado = $mysqli->query($query);
         switch ($Tipo_Accion) {
             case "I":
