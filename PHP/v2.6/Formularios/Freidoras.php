@@ -7,7 +7,7 @@
     {
         require "../Funciones/conexion.php";
         try {
-            $query = "select * from tabla_empleados";
+            $query = "select * from tabla_freidoras";
             $resultado = $mysqli->query($query);
         }catch(Exception $ex){}
 
