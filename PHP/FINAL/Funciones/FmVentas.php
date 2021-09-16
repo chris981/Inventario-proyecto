@@ -10,13 +10,7 @@
     //Definimos el tipo de accion tomada en el formulario principal
     $Tipo_Accion = $_POST["Tipo_Accion"];
     //definimos las variables que obtenemos del formulario principal
-
-    if (!isset($_POST["factura"])) {
-        $factura = "0";
-    } else {
-        $factura = ($_POST["factura"]);
-    }
-
+    $factura = ($_POST["factura"]);
     $fech_venta = $_POST["fecha"];
     $cod_emp = $_POST["codigo"];
     $cant_vend = $_POST["cantidad"];

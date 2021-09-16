@@ -9,14 +9,10 @@ if (!isset($_SESSION['usuario'])) {
     try {
 
         $cod_emp = $_SESSION['ID'];
-        $factura = "";
+        $factura = "0";
         $fecha = "";
         $cantidad = "";
         $total = "";
-
-
-
-
         if (isset($_GET['ID'])) {
             $query2 = "SELECT * from tabla_ventas where factura='" . $_GET['ID'] . "'";
             $resultado2 = $mysqli->query($query2);

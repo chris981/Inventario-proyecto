@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
     require "../Funciones/conexion.php";
     try {
         $cod_emp = $_SESSION['ID'];
-        $num_ped = "";
+        $num_ped = "0";
         $nom_sum = "";
         $fecha = "";
         $tip_sum = "";
@@ -55,7 +55,7 @@ if (!isset($_SESSION['usuario'])) {
                         <tr>
                             <td><b>Numero de Pedido:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="text" name="num_ped" value="<?php echo $num_ped ?>">
+                                <input class="w3-input w3-border" type="text" name="num_ped" value="<?php echo $num_ped ?>" readonly>
                             </td>
                         </tr>
                         <tr>
