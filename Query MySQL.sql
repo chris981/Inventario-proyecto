@@ -329,97 +329,11 @@ delimiter ;
 
 
 
-
-
--- SQLINES DEMO *** iento Almacenado Para Mantenimiento Tabla Empleados
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-delimiter //
-
-create procedure SP_Empleados
-(
-	p_cod_emp int,
-	p_usu_emp varchar(30) ,
-	p_cont_emp varchar(30) ,
-	p_nom_emp varchar(30) ,
-	p_ape_emp varchar(30) ,
-	p_res_emp varchar(30),
-	p_hor_emp varchar(9),
-	p_cant_ventas int,
-	p_cant_din_ventas decimal(10,2),
-    p_modo char(1)
-)
-begin
--- Inserccion
-if p_modo='I'
-then
-insert into Tabla_Empleados(usu_emp,cont_emp,nom_emp,ape_emp,res_emp,hor_emp,cant_ventas,cant_din_ventas) values (p_usu_emp,p_cont_emp,p_nom_emp,p_ape_emp,p_res_emp,p_hor_emp,p_cant_ventas,p_cant_din_ventas);
-end if;
--- Actualizacion
-if p_modo='A'
-then
-update Tabla_Empleados set nom_emp=p_nom_emp,ape_emp=p_ape_emp,res_emp=p_res_emp,hor_emp=p_hor_emp,cant_ventas=p_cant_ventas,cant_din_ventas=p_cant_din_ventas
-where cod_emp=p_cod_emp;
-end if;
--- Eliminacion
-if p_modo='E'
-then 
-delete from Tabla_Empleados
-where cod_emp=p_cod_emp;
-end if;
-
-end;
-//
-
-delimiter ;
-
-
-
-
--- SQLINES DEMO *** iento Almacenado Para Mantenimiento Tabla Solicitud Pedidos
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-delimiter //
-
-create procedure SP_Solicitud_Pedidos
-(
-p_num_ped int,
-p_nom_sum varchar(30),
-p_fecha datetime(3),
-p_tip_sum varchar(9),
-p_cant_soli int,
-p_cod_emp int,
-p_modo char(1)
-)
-begin
--- Inserccion
-if p_modo='I'
-then
-insert into Tabla_Solicitud_Pedidos(nom_sum,fecha,tip_sum,cant_soli,cod_emp) values (p_nom_sum,p_fecha,p_tip_sum,p_cant_soli,p_cod_emp);
-end if;
--- Actualizacion
-if p_modo='A'
-then
-update Tabla_Solicitud_Pedidos set nom_sum=p_nom_sum,fecha=p_fecha,tip_sum=p_tip_sum,cant_soli=p_cant_soli,cod_emp=p_cod_emp
-where num_ped=p_num_ped;
-end if;
--- Eliminacion
-if p_modo='E'
-then 
-delete from Tabla_Solicitud_Pedidos
-where num_ped=p_num_ped;
-end if;
-
-end;
-//
-
-delimiter ;
-
-
-
 -- SQLINES DEMO *** iento Almacenado Para Mantenimiento Tabla Recepcion Pedidos
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 delimiter //
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Solicitud_Pedidos`(
+CREATE PROCEDURE SP_Solicitud_Pedidos(
 p_num_ped int,
 p_nom_sum varchar(30),
 p_fecha datetime(3),
