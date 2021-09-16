@@ -7,7 +7,7 @@
     {
     require "../Funciones/conexion.php";
     try {
-        $cod_emp=$_SESSION['id'];
+        $cod_emp=$_SESSION['ID'];
         $nom_sum="";
         $fecha="";
         $tip_sum="";
@@ -40,34 +40,9 @@
 </head>
 
 <body>
-    <div class="w3-bar w3-orange">
-        <b><a class="w3-bar-item w3-button" href="../Formularios/Main.php">Inicio</a></b>
-        <div class="w3-dropdown-hover">
-            <button class="w3-button">Mantenimiento</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                <a href="../Formularios/mUsuarios.php" class="w3-bar-item w3-button">Empleados</a>
-                
-            </div>
-        </div>
-        <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSolicitudPedidos.php">Solicitud de Pedidos </a>
-        <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/ControlRBDFrituras.php">Control RBD Frituras</a>   
-        <a class="w3_bar-item w3-button w3-hide-small" href="#">Ventas</a>
-        <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/Freidoras.php">Freidora</a>
-        <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/Suministros.S">Suministros</a>
-        <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
-        <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" href="javascript:void(0)"
-            onclick="myFunction()">&#9776;</a>
-        <div id="demo" class="w3-bar-block w3-orange w3-hide w3-hide-large w3-hide-medium">
-                <a class="w3-bar-item w3-button" href="../Formularios/mSolicitudPedidos.php">Pedidos </a>
-                <a class="w3-bar-item w3-button" href="../Formularios/ControlRBDFrituras.php">Control RBD Frituras</a>
-                <a class="w3-bar-item w3-button" href="#">Ventas</a>
-                <a class="w3-bar-item w3-button" href="../Formularios/Freidoras.php">Freidora</a>
-                <a class="w3-bar-item w3-button" href="../Formularios/Suministros.php">Suministros</a>
-            <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
-        </div>
-    </div>
     <?php
         // Copiar siempre
+        include "./menu.php";
     ?>
     <div class="w3-card w3-margin w3-center">
         <b>
@@ -105,7 +80,7 @@
                     <tr>
                         <td><b>Codigo Empleado:</b></td>
                         <td>
-                            <input class="w3-input w3-border" type="text" name="cod_emp" value="<?php echo $_SESSION['id']; ?>" disabled>
+                            <input class="w3-input w3-border" type="text" name="cod_emp" value="<?php echo $_SESSION['ID']; ?>" readonly>
                         </td>
                     </tr>
                 </table>
