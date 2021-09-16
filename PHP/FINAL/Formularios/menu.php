@@ -7,7 +7,7 @@
             </div>
         </div>
         <a class="w3-bar-item w3-button w3-hide-small" href="#">Control Mensual </a>
-        <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mControlRBDFrituras.php">Control RBD Frituras</a>
+        <a class="w3_bar-item w3-button w3-hide-small" href="mControlRBDFrituras.php">Control RBD Frituras</a>
         <a class="w3_bar-item w3-button w3-hide-small" href="#">Ventas</a>
         <a class="w3_bar-item w3-button w3-hide-small" href="">Freidora</a>
         <a class="w3-bar-item w3-button w3-hide-small" href="">Suministros</a>
