@@ -29,7 +29,7 @@
     require "conexion.php";
     try {
         $query = "CALL SP_controlfrituras($codigoFritura,'$cantidadFritura','$codigoempleado','$horarioFritura','$cambioRBD','$codigoempcambio','$codigofre','$Tipo_Accion',)";
-        $resultado = $mysqli->query($query);
+        if($mysqli->query($query)){
         switch ($Tipo_Accion) {
             case "I":
     ?>
@@ -55,6 +55,11 @@
                 </a>
         <?php
                 break;
+        }}
+        else{
+            ?>
+            <h2>Error: <?php echo $mysqli -> error; ?></h2>
+            <?php
         }
     } catch (Exception $ex) {
         ?>

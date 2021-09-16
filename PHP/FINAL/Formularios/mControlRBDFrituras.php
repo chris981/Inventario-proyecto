@@ -37,7 +37,7 @@ if (!isset($_SESSION['usuario']))
 
 <td><b>Codigo Fritura:</b></td>
 <td>
-    <input class="w3-input w3-border" type="text" name="Codigofritura" require > 
+    <input class="w3-input w3-border" type="text" name="Codigofritura" require readonly > 
    
 </td>
 </tr>
@@ -52,7 +52,7 @@ if (!isset($_SESSION['usuario']))
 <tr>
 <td><b>Codigo Empleado:</b></td>
 <td>
- <input class="w3-input w3-border" type="text" name="Codigoempleado" required> 
+ <input class="w3-input w3-border" type="text" name="Codigoempleado" value="<?php echo $_SESSION['ID']; ?> " required readonly> 
 
 
 </td>
