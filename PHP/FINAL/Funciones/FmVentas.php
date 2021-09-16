@@ -39,7 +39,7 @@
 
             case "A":
             ?>
-                <h2>Usuario Actualizado con Exito!</h2>
+                <h2>Venta Actualizada con Exito!</h2>
                 <a href="../Formularios/mVentas.php">
                     <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                 </a>
@@ -47,7 +47,7 @@
                 break;
             case "E":
             ?>
-                <h2>Usuario Eliminado con Exito!</h2>
+                <h2>Venta Eliminada con Exito!</h2>
                 <a href="../Formularios/mVentas.php">
                     <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                 </a>

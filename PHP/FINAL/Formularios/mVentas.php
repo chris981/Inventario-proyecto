@@ -67,7 +67,7 @@ if (!isset($_SESSION['usuario'])) {
                         <tr>
                             <td><b>Fecha de Venta:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="date" name="fecha" value="<?php echo $fecha; ?>" min="1900-01-01" max="2050-12-31">
+                                <input class="w3-input w3-border" type="text" name="fecha" value="<?php echo $fecha; ?>">
                             </td>
                         </tr>
                         <tr>
