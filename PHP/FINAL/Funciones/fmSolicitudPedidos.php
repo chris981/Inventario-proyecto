@@ -26,7 +26,7 @@
     require "conexion.php";
     try {
         $query = "CALL SP_Solicitud_Pedidos('$num_ped','$nom_sum','$fecha','$tipo_sum','$cant_soli','$cod_emp','$Tipo_Accion')";
-        $resultado = $mysqli->query($query);
+        if($mysqli->query($query)){
         switch ($Tipo_Accion) {
             case "I":
     ?>
@@ -52,6 +52,11 @@
                 </a>
         <?php
                 break;
+        }}
+        else{
+            ?>
+            <h2>Error: <?php echo $mysqli -> error; ?></h2>
+            <?php
         }
     } catch (Exception $ex) {
         ?>
