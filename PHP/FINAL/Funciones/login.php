@@ -17,8 +17,7 @@
         {
             $ingreso=1;
             $_SESSION['usuario']=$usuario;
-    		$_SESSION['rol']=$ROL;
-            $_SESSION['id']=$row['cod_emp'];
+            $_SESSION['ID']=$row['cod_emp'];
         }
     }
     if($ingreso==1 )
