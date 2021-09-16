@@ -1,4 +1,3 @@
-
 <html>
 <html>
 
@@ -6,22 +5,17 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="../CSS/w3.css" rel="stylesheet">
 </head>
-
 <body>
     <?php
     //Definimos el tipo de accion tomada en el formulario principal
-$Tipo_Accion = $_POST["Tipo_Accion"];
-
-
+    $Tipo_Accion = $_POST["Tipo_Accion"];
     //definimos las variables que obtenemos del formulario principal
-    
+
     if (!isset($_POST["factura"])) {
         $factura = "0";
     } else {
-       $factura = ($_POST["factura"]);
+        $factura = ($_POST["factura"]);
     }
-
-
 
     $fech_venta = $_POST["fecha"];
     $cod_emp = $_POST["codigo"];
@@ -42,23 +36,23 @@ $Tipo_Accion = $_POST["Tipo_Accion"];
                 </a>
             <?php
                 break;
-                
-                case "A":
-                    ?>
-                        <h2>Usuario Actualizado con Exito!</h2>
-                        <a href="../Formularios/mVentas.php">
-                            <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
-                        </a>
-                    <?php
-                        break;
-                    case "E":
-                    ?>
-                        <h2>Usuario Eliminado con Exito!</h2>
-                        <a href="../Formularios/mVentas.php">
-                            <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
-                        </a>
-                <?php
-                        break;
+
+            case "A":
+            ?>
+                <h2>Usuario Actualizado con Exito!</h2>
+                <a href="../Formularios/mVentas.php">
+                    <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
+                </a>
+            <?php
+                break;
+            case "E":
+            ?>
+                <h2>Usuario Eliminado con Exito!</h2>
+                <a href="../Formularios/mVentas.php">
+                    <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
+                </a>
+        <?php
+                break;
         }
     } catch (Exception $ex) {
         ?>

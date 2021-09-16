@@ -102,19 +102,18 @@ try {
             <div class="w3-container w3-cell ">
                 <table class="w3-table-all">
                     <?php
-
                     //Codigo PHP para Tablas
                     echo
                     "<tr>
-                                <th>Codigofritura</th>
-                                <th>Cantidad</th>
-                                <th>Codigoempleado</th>
-                                <th>HorarioFritura</th>
-                                <th>CambioRBD</th>
-                                <th>CodigoEmpleadoCambio</th> 
-                                <th>CodigoFreidora</th>
-                                <th></th>
-                            <tr/>";
+                        <th>Codigofritura</th>
+                        <th>Cantidad</th>
+                        <th>Codigoempleado</th>
+                        <th>HorarioFritura</th>
+                        <th>CambioRBD</th>
+                        <th>CodigoEmpleadoCambio</th> 
+                        <th>CodigoFreidora</th>
+                        <th></th>
+                    <tr/>";
                     while ($row = $resultado->fetch_assoc()) { ?>
                         <tr>
                             <td><?php echo $row['cod_fritura']; ?> </td>
