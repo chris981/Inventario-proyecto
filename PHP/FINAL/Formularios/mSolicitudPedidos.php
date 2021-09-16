@@ -8,6 +8,7 @@
     require "../Funciones/conexion.php";
     try {
         $cod_emp=$_SESSION['ID'];
+        $num_ped="";
         $nom_sum="";
         $fecha="";
         $tip_sum="";
@@ -23,7 +24,7 @@
                 $fecha=$row2['fecha'];
                 $tip_sum=$row2['tip_sum'];
                 $cant_soli=$row2['cant_soli'];
-                $cod_emp=$_SESSION['id'];
+                $cod_emp=$_SESSION['ID'];
             }
         }
         $query = "SELECT * from tabla_solicitud_pedidos";
@@ -53,6 +54,12 @@
         <form id action="../Funciones/fmSolicitudPedidos.php" method="POST">
             <div class="w3-container w3-cell w3-border">
                 <table class=" w3-table">
+                    <tr>
+                        <td><b>Numero de Pedido:</b></td>
+                        <td>
+                            <input class="w3-input w3-border" type="text" name="num_ped" value="<?php echo $num_ped ?>">
+                        </td>
+                    </tr>
                     <tr>
                         <td><b>Nombre Suministro Solicitado:</b></td>
                         <td>
@@ -85,12 +92,11 @@
                     </tr>
                 </table>
                 <div>
-                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion"
-                        value="I">Agregar</button>
-                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion"
-                        value="A">Modificar</button>
-                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion"
-                        value="E">Eliminar</button>
+                    <a class="w3-button w3-round w3-orange w3-section"  href='../Formularios/mSolicitudPedidos.php'>Nuevo</a>
+                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">Agregar</button>
+                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
+                    <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
+                    <button class="w3-button w3-round w3-orange w3-section" type="reset" value="reset">Cancelar</button>
                 </div>
             </div>
             <div class="w3-container w3-cell ">
