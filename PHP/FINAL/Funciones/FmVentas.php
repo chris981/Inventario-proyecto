@@ -54,7 +54,7 @@ $Tipo_Accion = $_POST["Tipo_Accion"];
                     case "E":
                     ?>
                         <h2>Usuario Eliminado con Exito!</h2>
-                        <a href="../Formularios/.php">
+                        <a href="../Formularios/mVentas.php">
                             <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                         </a>
                 <?php
