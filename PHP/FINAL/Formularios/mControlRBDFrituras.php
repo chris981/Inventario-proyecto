@@ -34,11 +34,9 @@ try {
             <div class="w3-container w3-cell w3-border">
                 <table class=" w3-table">
                     <tr>
-
                         <td><b>Codigo Fritura:</b></td>
                         <td>
-                            <input class="w3-input w3-border" type="text" name="Codigofritura" require readonly>
-
+                            <input class="w3-input w3-border" type="text" name="Codigofritura" readonly>
                         </td>
                     </tr>
                     <tr>
@@ -52,7 +50,7 @@ try {
                     <tr>
                         <td><b>Codigo Empleado:</b></td>
                         <td>
-                            <input class="w3-input w3-border" type="text" name="Codigoempleado" value="<?php echo $_SESSION['ID']; ?> " required readonly>
+                            <input class="w3-input w3-border" type="text" name="Codigoempleado" value="<?php echo $_SESSION['ID']; ?>" readonly>
 
 
                         </td>
@@ -61,7 +59,7 @@ try {
                         <td><b>Horario Fritura:</b></td>
                         <td>
 
-                            <input class="w3-input w3-border" type="datetime-local" name="HorarioFritura" required>
+                            <input class="w3-input w3-border" type="text" name="HorarioFritura" required>
 
                         </td>
                     <tr>
@@ -70,7 +68,7 @@ try {
                     <td><b>CambioRBD:</b></td>
                     <td>
 
-                        <input class="w3-input w3-border" type="datetime-local" name="CambioRBD" required>
+                        <input class="w3-input w3-border" type="text" name="CambioRBD" required>
 
                     <td>
                         <tr>

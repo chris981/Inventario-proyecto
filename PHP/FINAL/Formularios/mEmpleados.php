@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 } else {
     require "../funciones/conexion.php";
     try {
-        $cod_emp = ""; //$_SESSION['ID'];
+        $cod_emp = "0"; //$_SESSION['ID'];
         $nombre = "";
         $apellido = "";
         $horario = "";
