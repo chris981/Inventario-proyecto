@@ -337,22 +337,22 @@ delimiter //
 
 create procedure SP_Empleados
 (
-	cod_emp int,
-	usu_emp varchar(30) ,
-	cont_emp varchar(30) ,
-	nom_emp varchar(30) ,
-	ape_emp varchar(30) ,
-	res_emp varchar(30),
-	hor_emp varchar(9),
-	cant_ventas int,
-	cant_din_ventas decimal(10,2),
+	p_cod_emp int,
+	p_usu_emp varchar(30) ,
+	p_cont_emp varchar(30) ,
+	p_nom_emp varchar(30) ,
+	p_ape_emp varchar(30) ,
+	p_res_emp varchar(30),
+	p_hor_emp varchar(9),
+	p_cant_ventas int,
+	p_cant_din_ventas decimal(10,2),
     p_modo char(1)
 )
 begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Empleados(usu_emp,cont_emp,nom_emp,ape_emp,res_emp,hor_emp,cant_ventas,cant_din_ventas) values (usu_emp,cont_emp,nom_emp,ape_emp,res_emp,hor_emp,cant_ventas,cant_din_ventas);
+insert into Tabla_Empleados(usu_emp,cont_emp,nom_emp,ape_emp,res_emp,hor_emp,cant_ventas,cant_din_ventas) values (p_usu_emp,p_cont_emp,p_nom_emp,p_ape_emp,p_res_emp,p_hor_emp,p_cant_ventas,p_cant_din_ventas);
 end if;
 -- Actualizacion
 if p_modo='A'
