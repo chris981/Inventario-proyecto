@@ -10,7 +10,7 @@
  
   try {
     
-   $cod_emp=$_SESSION ['id']; 
+   $cod_emp=$_SESSION ['ID']; 
    $factura="";
     $fecha="";
     $cantidad="";
@@ -19,8 +19,8 @@
 
 
 
-    if(isset($_GET['id'])){
-      $query2 = "SELECT * from tabla_ventas where factura='" . $_GET['id']."'";
+    if(isset($_GET['ID'])){
+      $query2 = "SELECT * from tabla_ventas where factura='" . $_GET['ID']."'";
       $resultado2 = $mysqli->query($query2);
       while ($row2=$resultado2->fetch_assoc())
       {
@@ -104,7 +104,7 @@
                     <tr>
                         <td><b>Codigo Empleado:</b></td>
                         <td>
-                         <input class="w3-input w3-border" type="text" name="codigo" disabled  value="<?php echo $_SESSION['id']; ?> ">
+                         <input class="w3-input w3-border" type="text" name="codigo" required value="<?php echo $_SESSION['ID']; ?> ">
 
                         
                         </td>
@@ -163,7 +163,7 @@
                         <td><?php echo $row['cant_vend']; ?> </td>
                         <td><?php echo $row['tot_venta']; ?> </td>
                       <td>
-                      <center><a href="./mVentas.php?id=<?php echo $row['factura'];?>">Seleccionar</a>
+                      <center><a href="./mVentas.php?ID=<?php echo $row['factura'];?>">Seleccionar</a>
                             </center>
                         </td>
                     </tr>
