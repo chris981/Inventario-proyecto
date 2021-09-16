@@ -67,7 +67,7 @@ if (!isset($_SESSION['usuario'])) {
                         <tr>
                             <td><b>Fecha de Venta:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="datetime-local" name="fecha" value="<?php echo $fecha; ?>">
+                                <input class="w3-input w3-border" type="date" name="fecha" value="<?php echo $fecha; ?>" min="1900-01-01" max="2050-12-31">
                             </td>
                         </tr>
                         <tr>
@@ -90,11 +90,12 @@ if (!isset($_SESSION['usuario'])) {
                         </tr>
                     </table>
                     <div>
-                            <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">agregar</button>
-                            <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
-                            <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
-                            <button class="w3-button w3-round w3-orange w3-section" type="reset" value="reset">Cancelar</button>
-                        </div>
+                        <a class="w3-button w3-round w3-orange w3-section" href='mVentas.php'>Nuevo</a>
+                        <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">agregar</button>
+                        <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
+                        <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
+                        <button class="w3-button w3-round w3-orange w3-section" type="reset" value="reset">Cancelar</button>
+                    </div>
                 </div>
                 <div class="w3-container w3-cell ">
                     <table class="w3-table-all">
