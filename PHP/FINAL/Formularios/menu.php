@@ -8,7 +8,7 @@
         </div>
         <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSolicitudPedidos.php">Solicitud de Pedidos </a>
         <a class="w3_bar-item w3-button w3-hide-small" href="mControlRBDFrituras.php">Control RBD Frituras</a>
-        <a class="w3_bar-item w3-button w3-hide-small" href="#">Ventas</a>
+        <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mVentas.php">Ventas</a>
         <a class="w3_bar-item w3-button w3-hide-small" href="">Freidora</a>
         <a class="w3-bar-item w3-button w3-hide-small" href="">Suministros</a>
         <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
