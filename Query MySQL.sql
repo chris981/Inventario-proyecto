@@ -270,7 +270,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Ventas(fech_venta,cod_emp,cant_vend,tot_venta) values (p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
+insert into Tabla_Ventas(factura,fech_venta,cod_emp,cant_vend,tot_venta) values (p_factura,p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -419,35 +419,35 @@ delimiter ;
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 delimiter //
 
-create procedure SP_Recepcion_Compras
-(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Solicitud_Pedidos`(
 p_num_ped int,
+p_nom_sum varchar(30),
 p_fecha datetime(3),
-p_cant_reci int, 
+p_tip_sum varchar(9),
+p_cant_soli int,
 p_cod_emp int,
-p_tot_gasto decimal(10,2),
 p_modo char(1)
 )
 begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Recepcion_Pedidos(fecha,cant_reci,cod_emp,tot_gasto) values (p_fecha,p_cant_reci,p_cod_emp,p_tot_gasto);
+insert into Tabla_Solicitud_Pedidos(nom_sum,fecha,tip_sum,cant_soli,cod_emp) values (p_nom_sum,p_fecha,p_tip_sum,p_cant_soli,p_cod_emp);
 end if;
 -- Actualizacion
 if p_modo='A'
 then
-update Tabla_Recepcion_Pedidos set fecha=p_fecha,cant_reci=p_cant_reci,cod_emp=p_cod_emp,tot_gasto=p_tot_gasto
+update Tabla_Solicitud_Pedidos set nom_sum=p_nom_sum,fecha=p_fecha,tip_sum=p_tip_sum,cant_soli=p_cant_soli,cod_emp=p_cod_emp
 where num_ped=p_num_ped;
 end if;
 -- Eliminacion
 if p_modo='E'
 then 
-delete from Tabla_Recepcion_Pedidos
+delete from Tabla_Solicitud_Pedidos
 where num_ped=p_num_ped;
 end if;
 
-end;
+end
 //
 
 delimiter ;
