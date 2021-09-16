@@ -150,7 +150,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Control_Frituras(p_cant_fri,p_cod_emp,p_hor_fri,p_cam_rbd,p_cod_emp_cam,p_cod_fre) values (p_cant_fri,p_cod_emp,p_hor_fri,p_cam_rbd,p_cod_emp_cam,p_cod_fre);
+insert into Tabla_Control_Frituras(cant_fri,cod_emp,hor_fri,cam_rbd,cod_emp_cam,cod_fre) values (p_cant_fri,p_cod_emp,p_hor_fri,p_cam_rbd,p_cod_emp_cam,p_cod_fre);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -188,7 +188,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Menu(p_nom_menu,p_pre_menu,p_tip_prod) values (p_nom_menu,p_pre_menu,p_tip_prod);
+insert into Tabla_Menu(nom_menu,pre_menu,tip_prod) values (p_nom_menu,p_pre_menu,p_tip_prod);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -230,7 +230,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Suministros(p_nom_sum,p_tip_sum,p_cant_inv,p_elab_sum,p_venc_sum,p_rec_sum,p_cod_emp) values (p_nom_sum,p_tip_sum,p_cant_inv,p_elab_sum,p_venc_sum,p_rec_sum,p_cod_emp);
+insert into Tabla_Suministros(nom_sum,tip_sum,cant_inv,elab_sum,venc_sum,rec_sum,cod_emp) values (p_nom_sum,p_tip_sum,p_cant_inv,p_elab_sum,p_venc_sum,p_rec_sum,p_cod_emp);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -270,7 +270,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Ventas(p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta) values (p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
+insert into Tabla_Ventas(fech_venta,cod_emp,cant_vend,tot_venta) values (p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -307,7 +307,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Detalle_ventas(p_cod_sum,p_cod_menu) values (p_cod_sum,p_cod_menu);
+insert into Detalle_ventas(cod_sum,cod_menu) values (p_cod_sum,p_cod_menu);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -393,7 +393,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Solicitud_Pedidos(p_nom_sum,p_fecha,p_tip_sum,p_cant_soli,p_cod_emp) values (p_nom_sum,p_fecha,p_tip_sum,p_cant_soli,p_cod_emp);
+insert into Tabla_Solicitud_Pedidos(nom_sum,fecha,tip_sum,cant_soli,cod_emp) values (p_nom_sum,p_fecha,p_tip_sum,p_cant_soli,p_cod_emp);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -432,7 +432,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Recepcion_Pedidos(p_fecha,p_cant_reci,p_cod_emp,p_tot_gasto) values (p_fecha,p_cant_reci,p_cod_emp,p_tot_gasto);
+insert into Tabla_Recepcion_Pedidos(fecha,cant_reci,cod_emp,tot_gasto) values (p_fecha,p_cant_reci,p_cod_emp,p_tot_gasto);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -471,7 +471,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Registro_Compras(p_nom_art,p_fecha,p_tot_gast,p_cod_emp) values (p_nom_art,p_fecha,p_tot_gast,p_cod_emp);
+insert into Tabla_Registro_Compras(nom_art,fecha,tot_gast,cod_emp) values (p_nom_art,p_fecha,p_tot_gast,p_cod_emp);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -507,7 +507,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Freidoras(p_info_fre) values (p_info_fre);
+insert into Tabla_Freidoras(info_fre) values (p_info_fre);
 end if;
 -- Actualizacion
 if p_modo='A'
@@ -543,7 +543,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tipo_Suministros(p_nom_sum) values (p_nom_sum);
+insert into Tipo_Suministros(nom_sum) values (p_nom_sum);
 end if;
 -- Actualizacion
 if p_modo='A'
