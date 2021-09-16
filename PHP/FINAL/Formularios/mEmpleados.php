@@ -56,7 +56,7 @@ if (!isset($_SESSION['usuario'])) {
             </b>
         </div>
         <div class="w3-container">
-            <form id action="../Funciones/fmUsuarios.php" method="POST">
+            <form id action="../Funciones/fmEmpleados.php" method="POST">
                 <div class="w3-container w3-cell w3-border">
                     <table class=" w3-table">
                         <tr>
@@ -141,7 +141,7 @@ if (!isset($_SESSION['usuario'])) {
                         </tr>
                     </table>
                     <div>
-                        <button class="w3-button w3-round w3-orange w3-section"  onclick="">Nuevo</button>
+                        <a class="w3-button w3-round w3-orange w3-section"  href='mEmpleados.php'>Nuevo</a>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">Agregar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
@@ -155,16 +155,16 @@ if (!isset($_SESSION['usuario'])) {
                         //Codigo PHP para Tablas
                         echo
                         "<tr>
-                                        <th>Codigo</th>
-                                        <th>Usuario</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Residencia</th>
-                                        <th>Horario</th>
-                                        <th>Cantidad Ventas</th>
-                                        <th>Cantidad Dinero</th>
-                                        <th></th>
-                                    <tr/>";
+                            <th>Codigo</th>
+                            <th>Usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Residencia</th>
+                            <th>Horario</th>
+                            <th>Cantidad Ventas</th>
+                            <th>Cantidad Dinero</th>
+                            <th></th>
+                        <tr/>";
                         while ($row = $resultado->fetch_assoc()) { ?>
                             <tr>
                                 <td><?php echo $row['cod_emp']; ?> </td>
