@@ -9,6 +9,13 @@ if (!isset($_SESSION['usuario'])) {
         $cod_emp = ""; //$_SESSION['ID'];
         $nombre = "";
         $apellido = "";
+        $horario = "";
+        $usuario = "";
+        $clave = "";
+        $residencia = "";
+        $cant_ventas = "";
+        $cant_din_ventas = "";
+
         if (isset($_GET['ID'])) {
             $query2 = "select * from tabla_empleados where cod_emp='" . $_GET['ID'] . "'";
             $resultado2 = $mysqli->query($query2);
@@ -16,6 +23,12 @@ if (!isset($_SESSION['usuario'])) {
                 $nombre = $row2['nom_emp'];
                 $cod_emp = $row2['cod_emp'];
                 $apellido = $row2['ape_emp'];
+                $horario = $row2['hor_emp'];
+                $usuario = $row2['usu_emp'];
+                $clave = $row2['cont_emp'];
+                $residencia = $row2['res_emp'];
+                $cant_ventas = $row2['cant_ventas'];
+                $cant_din_ventas = $row2['cant_din_ventas'];
             }
         }
         $query = "select * from tabla_empleados";
@@ -39,7 +52,7 @@ if (!isset($_SESSION['usuario'])) {
         ?>
         <div class="w3-card w3-margin w3-center">
             <b>
-                <h2>Mantenimiento a Usuarios</h2>
+                <h2>Mantenimiento a Empleados</h2>
             </b>
         </div>
         <div class="w3-container">
@@ -47,48 +60,88 @@ if (!isset($_SESSION['usuario'])) {
                 <div class="w3-container w3-cell w3-border">
                     <table class=" w3-table">
                         <tr>
-                            <td><b>Codigo Empleado:</b></td>
+                            <td><b>Codigo:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="text" name="codigo" disabled>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Nombre de Empleado:</b></td>
-                            <td>
-                                <input class="w3-input w3-border" type="text" name="nombre" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Apellido de Empleado:</b></td>
-                            <td>
-                                <input class="w3-input w3-border" type="text" name="apellido" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Tipo Usuario:</b></td>
-                            <td>
-                                <select name="tipo" class="w3-select">
-                                    <option disabled selected></option>
-                                    <option value="ADM">ADM</option>
-                                    <option value="USR">USR</option>
-                                </select>
+                                <input class="w3-input w3-border" type="text" name="codigo" value="<?php echo $cod_emp; ?>" disabled>
                             </td>
                         </tr>
                         <tr>
                             <td><b>Usuario:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="text" name="usuario" required>
+                                <input class="w3-input w3-border" type="text" name="usuario" required value="<?php echo $usuario; ?>">
                             </td>
                         </tr>
                         <tr>
                             <td><b>Clave:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="password" name="clave" required>
+                                <input class="w3-input w3-border" type="password" name="clave" required value="<?php echo $clave; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Nombre</b></td>
+                            <td>
+                                <input class="w3-input w3-border" type="text" name="nombre" required value="<?php echo $nombre; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Apellido:</b></td>
+                            <td>
+                                <input class="w3-input w3-border" type="text" name="apellido" required value="<?php echo $apellido; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Horario:</b></td>
+                            <td>
+                                <select name="horario" class="w3-select">
+                                    <?php
+                                    switch ($horario) {
+                                        case "";
+                                    ?>
+                                            <option disabled selected></option>
+                                            <option value="Matutino">Matutino</option>
+                                            <option value="Vespertino">Vespertino</option>
+                                        <?php
+                                            break;
+                                        case "Matutino";
+                                        ?>
+                                            <option disabled></option>
+                                            <option value="Matutino" selected>Matutino</option>
+                                            <option value="Vespertino">Vespertino</option>
+                                        <?php
+                                            break;
+                                        case "Vespertino";
+                                        ?>
+                                            <option disabled ></option>
+                                            <option value="Matutino">Matutino</option>
+                                            <option value="Vespertino" selected>Vespertino</option>
+                                    <?php
+                                            break;
+                                    }
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Residencia:</b></td>
+                            <td>
+                                <input class="w3-input w3-border" type="text" name="residencia" required value="<?php echo $residencia; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Cantidad en Ventas:</b></td>
+                            <td>
+                                <input class="w3-input w3-border" type="text" name="cant_ventas" required value="<?php echo $cant_ventas; ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Cantidad Dinero Ventas:</b></td>
+                            <td>
+                                <input class="w3-input w3-border" type="text" name="cant_din_ventas" required value="<?php echo $cant_din_ventas; ?>">
                             </td>
                         </tr>
                     </table>
                     <div>
-                        <button class="w3-button w3-round w3-orange w3-section" type="reset" value="reset">Nuevo</button>
+                        <button class="w3-button w3-round w3-orange w3-section"  onclick="">Nuevo</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">Agregar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
@@ -103,22 +156,26 @@ if (!isset($_SESSION['usuario'])) {
                         echo
                         "<tr>
                                         <th>Codigo</th>
+                                        <th>Usuario</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Tipo Usuario</th>
-                                        <th>Usuario</th>
+                                        <th>Residencia</th>
+                                        <th>Horario</th>
+                                        <th>Cantidad Ventas</th>
+                                        <th>Cantidad Dinero</th>
                                         <th></th>
                                     <tr/>";
                         while ($row = $resultado->fetch_assoc()) { ?>
                             <tr>
                                 <td><?php echo $row['cod_emp']; ?> </td>
-                                <td><?php echo $row['nom_emp']; ?> </td>
-                                <td><?php echo $row['ape_emp']; ?> </td>
-                                <td><?php echo $row['tip_usu']; ?> </td>
-                                <td><?php echo $row['usu_emp']; ?> </td>
-                                <td>
-                                    <center><a href="#">Seleccionar</a>
-                                    </center>
+                                 <td><?php echo $row['usu_emp']; ?> </td>
+                                 <td><?php echo $row['nom_emp']; ?> </td>
+                                 <td><?php echo $row['ape_emp']; ?> </td>
+                                 <td><?php echo $row['res_emp']; ?> </td>
+                                 <td><?php echo $row['hor_emp']; ?> </td>
+                                 <td><?php echo $row['cant_ventas']; ?> </td>
+                                 <td><?php echo $row['cant_din_ventas']; ?> </td>
+                                <td><center><a href="./mEmpleados.php?ID=<?php echo $row['cod_emp'];?>">Seleccionar</a></center>
                                 </td>
                             </tr>
                         <?php }

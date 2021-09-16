@@ -20,20 +20,23 @@
 
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
-    $tipo = $_POST["tipo"];
+    $horario = $_POST["horario"];
     $usuario = $_POST["usuario"];
     $clave = $_POST["clave"];
+    $residencia = $_POST["residencia"];
+    $cant_ventas = $_POST["cant_ventas"];
+    $cant_din_ventas =$_POST["cant_din_ventas"];
 
     //Iniciamos programaciones
     require "conexion.php";
     try {
-        $query = "CALL SP_Usuarios($codigo,'$nombre','$apellido','$tipo','$usuario','$clave','$Tipo_Accion')";
+        $query = "CALL SP_Empleados($codigo,'$usuario','$clave','$nombre','$apellido','$residencia','$horario','$cant_ventas','$cant_din_ventas','$Tipo_Accion')";
         $resultado = $mysqli->query($query);
         switch ($Tipo_Accion) {
             case "I":
     ?>
                 <h2>Usuario Ingresado con Exito!</h2>
-                <a href="../Formularios/mUsuarios.php">
+                <a href="../Formularios/mEmpleados.php">
                     <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                 </a>
             <?php
@@ -41,7 +44,7 @@
             case "A":
             ?>
                 <h2>Usuario Actualizado con Exito!</h2>
-                <a href="../Formularios/mUsuarios.php">
+                <a href="../Formularios/mEmpleados.php">
                     <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                 </a>
             <?php
@@ -49,7 +52,7 @@
             case "E":
             ?>
                 <h2>Usuario Eliminado con Exito!</h2>
-                <a href="../Formularios/mUsuarios.php">
+                <a href="../Formularios/mEmpleados.php">
                     <input class="w3-button w3-round w3-orange w3-section" type="button" value="Regresar">
                 </a>
         <?php
