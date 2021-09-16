@@ -10,7 +10,6 @@
     <?php
     //Definimos el tipo de accion tomada en el formulario principal
     $Tipo_Accion = $_POST["Tipo_Accion"];
-
     //definimos las variables que obtenemos del formulario principal
     if (!isset($_POST["codigo"])) {
         $codigo = "0";
@@ -26,7 +25,7 @@
     $residencia = $_POST["residencia"];
     $cant_ventas = $_POST["cant_ventas"];
     $cant_din_ventas =$_POST["cant_din_ventas"];
-
+    
     //Iniciamos programaciones
     require "conexion.php";
     try {

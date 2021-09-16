@@ -62,7 +62,7 @@ if (!isset($_SESSION['usuario'])) {
                         <tr>
                             <td><b>Codigo:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="text" name="codigo" value="<?php echo $cod_emp; ?>" disabled>
+                                <input class="w3-input w3-border" type="text" name="codigo" value="<?php echo $cod_emp; ?>" readonly>
                             </td>
                         </tr>
                         <tr>
@@ -95,25 +95,25 @@ if (!isset($_SESSION['usuario'])) {
                                 <select name="horario" class="w3-select">
                                     <?php
                                     switch ($horario) {
-                                        case "";
+                                        default;
                                     ?>
                                             <option disabled selected></option>
-                                            <option value="Matutino">Matutino</option>
-                                            <option value="Vespertino">Vespertino</option>
+                                            <option value="Mañana">Mañana</option>
+                                            <option value="Tarde">Tarde</option>
                                         <?php
                                             break;
-                                        case "Matutino";
+                                        case "Mañana";
                                         ?>
                                             <option disabled></option>
-                                            <option value="Matutino" selected>Matutino</option>
-                                            <option value="Vespertino">Vespertino</option>
+                                            <option value="Mañana" selected>Mañana</option>
+                                            <option value="Tarde">Tarde</option>
                                         <?php
                                             break;
-                                        case "Vespertino";
+                                        case "Tarde";
                                         ?>
                                             <option disabled ></option>
-                                            <option value="Matutino">Matutino</option>
-                                            <option value="Vespertino" selected>Vespertino</option>
+                                            <option value="Mañana">Mañana</option>
+                                            <option value="Tarde" selected>Tarde</option>
                                     <?php
                                             break;
                                     }
