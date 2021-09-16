@@ -270,7 +270,7 @@ begin
 -- Inserccion
 if p_modo='I'
 then
-insert into Tabla_Ventas(fech_venta,cod_emp,cant_vend,tot_venta) values (p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
+insert into Tabla_Ventas(factura,fech_venta,cod_emp,cant_vend,tot_venta) values (p_factura,p_fech_venta,p_cod_emp,p_cant_vend,p_tot_venta);
 end if;
 -- Actualizacion
 if p_modo='A'
