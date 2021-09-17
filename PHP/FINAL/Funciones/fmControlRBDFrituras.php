@@ -12,23 +12,23 @@
     $Tipo_Accion = $_POST["Tipo_Accion"];
 
     //definimos las variables que obtenemos del formulario principal
-    if (!isset($_POST["Codigofritura"])) {
+    if (!isset($_POST["codigo"])) {
         $codigo = "0";
     } else {
-        $codigo = ($_POST["Codigofritura"]);
+        $codigo = ($_POST["codigo"]);
     }
-    $cantidadFritura = $_POST["Cantidad"];
-    $codigoEmpleado = $_POST["Codigoempleado"];
-    $horarioFritura = $_POST["HorarioFritura"];
-    $cambioRBD = $_POST["CambioRBD"];
-    $codigoempcambio = $_POST["CodigoempleadoCambio"];
-    $codigofre = $_POST["Codigofreidora"];
+
+    $codigoFritura = $_POST["codigofritura"];
+    $cantidadFritura = $_POST["cantidadfritura"];
+    $codigoEmpleado = $_POST["codigoempleado"];
+    $horarioFritura = $_POST["horarioFritura"];
+    $cambioRBD = $_POST["cambioRBD"];
+    $codigoempcambio = $_POST["codigoempcambio"];
+    $codigofre = $_POST["codigofre"];
     //Iniciamos programaciones
     require "conexion.php";
     try {
-        $query = "CALL SP_controlfrituras('$codigo','$cantidadFritura','$codigoEmpleado','$horarioFritura','$cambioRBD','$codigoempcambio','$codigofre','$Tipo_Accion')";
-        echo $query;
-        echo $_POST["Codigofritura"];
+        $query = "CALL SP_controlfrituras($codigoFritura,'$cantidadFritura','$codigoempleado','$horarioFritura','$cambioRBD','$codigoempcambio','$codigofre','$Tipo_Accion',)";
         if($mysqli->query($query)){
         switch ($Tipo_Accion) {
             case "I":
