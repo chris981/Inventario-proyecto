@@ -12,6 +12,7 @@
             <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mFreidora.php">Freidora</a>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSuministros.php">Suministros</a>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/manual.php">Manual</a>
+            <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/reporte.php">Reporte Ventas</a>
             <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
             <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" href="javascript:void(0)" onclick="myFunction()">&#9776;</a>
             <div id="demo" class="w3-bar-block w3-orange w3-hide w3-hide-large w3-hide-medium">
@@ -21,6 +22,7 @@
                 <a class="w3-bar-item w3-button" href="../Formularios/Freidoras.php">Freidora</a>
                 <a class="w3-bar-item w3-button" href="../Formularios/Suministros.php">Suministros</a>
                 <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/manual.php">Manual</a>
+                <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/reporte.php">Reporte Ventas</a>
                 <a class="w3_bar-item w3-button w3-hide-small" href="../Funciones/logout.php">Salir</a>
             </div>
         </div>
