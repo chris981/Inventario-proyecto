@@ -135,6 +135,14 @@ if (!isset($_SESSION['usuario'])) {
                                 <select name="tipo" class="w3-select">
                                     <?php
                                     switch ($tipo) {
+                                        default;
+                                        ?>
+                                            <option disabled selected></option>
+                                            <option value="ADM">ADM</option>
+                                            <option value="USR">USR</option>
+                                        <?php
+                                            break;
+
                                         case "ADM";
                                         ?>
                                             <option disabled></option>
