@@ -27,9 +27,7 @@ if (!isset($_SESSION['usuario'])) {
                 }
             }
         </script>
-
     </body>
 
-    </html>
 <?php }
 ?>

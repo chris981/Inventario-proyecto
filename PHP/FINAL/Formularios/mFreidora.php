@@ -8,20 +8,14 @@ if (!isset($_SESSION['usuario'])) {
 
     try {
 
-        $codigo ="";
+        $codigo = "";
         $freidora = "";
-        
-
-
-
-
         if (isset($_GET['codigo_fre'])) {
             $query2 = "SELECT * from tabla_freidoras where cod_fre='" . $_GET['codigo_fre'] . "'";
             $resultado2 = $mysqli->query($query2);
             while ($row2 = $resultado2->fetch_assoc()) {
                 $codigo = $row2['cod_fre'];
                 $freidora = $row2['info_fre'];
-               
             }
         }
         $query = "SELECT * from tabla_freidoras";
@@ -56,7 +50,7 @@ if (!isset($_SESSION['usuario'])) {
                         <tr>
                             <td><b>Codigo Freidora:</b></td>
                             <td>
-                                <input class="w3-input w3-border" type="text" name="codigo"  value="<?php echo $codigo; ?>">
+                                <input class="w3-input w3-border" type="text" name="codigo" value="<?php echo $codigo; ?>">
 
                             </td>
                         </tr>
@@ -67,7 +61,7 @@ if (!isset($_SESSION['usuario'])) {
                             </td>
                         </tr>
                         <tr>
-                           
+
                     </table>
                     <div>
                         <a class="w3-button w3-round w3-orange w3-section" href='./mFreidora.php'>Nuevo</a>
@@ -93,9 +87,9 @@ if (!isset($_SESSION['usuario'])) {
                             <tr>
                                 <td><?php echo $row['cod_fre']; ?> </td>
                                 <td><?php echo $row['info_fre']; ?> </td>
-                                
+
                                 <td>
-                                <center><a href="./mFreidora.php?codigo_fre=<?php echo $row['cod_fre']; ?>">Seleccionar</a>
+                                    <center><a href="./mFreidora.php?codigo_fre=<?php echo $row['cod_fre']; ?>">Seleccionar</a>
                                     </center>
                                 </td>
                             </tr>
