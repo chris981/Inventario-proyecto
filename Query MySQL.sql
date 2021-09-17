@@ -81,8 +81,9 @@ create table Tabla_Empleados
 	ape_emp varchar(30) not null,
 	res_emp varchar(30),
 	hor_emp varchar(9) not null,
+	tipo varchar(3),
 	cant_ventas int not null,
-	cant_din_ventas decimal(10,2)
+	cant_din_ventas decimal(10,2)	
 );
 
 
@@ -476,3 +477,53 @@ end;
 //
 
 delimiter ;
+
+delimiter //
+create procedure SP_Empleados
+(
+	p_cod_emp int,
+	p_usu_emp varchar(30) ,
+	p_cont_emp varchar(30) ,
+	p_nom_emp varchar(30) ,
+	p_ape_emp varchar(30) ,
+	p_res_emp varchar(30),
+	p_hor_emp varchar(9),
+	p_tipo varchar(3),
+	p_cant_ventas int,
+	p_cant_din_ventas decimal(10,2),
+    p_modo char(1)
+)
+begin
+-- Inserccion
+if p_modo='I'
+then
+insert into Tabla_Empleados(usu_emp,cont_emp,nom_emp,ape_emp,res_emp,hor_emp,tipo,cant_ventas,cant_din_ventas) values (p_usu_emp,p_cont_emp,p_nom_emp,p_ape_emp,p_res_emp,p_hor_emp,p_tipo,p_cant_ventas,p_cant_din_ventas);
+end if;
+-- Actualizacion
+if p_modo='A'
+then
+update Tabla_Empleados set 
+nom_emp=p_nom_emp,
+ape_emp=p_ape_emp,
+usu_emp=p_usu_emp,
+cont_emp=p_cont_emp,
+res_emp=p_res_emp,
+hor_emp=p_hor_emp,
+tipo=p_tipo,
+cant_ventas=p_cant_ventas,
+cant_din_ventas=p_cant_din_ventas
+where cod_emp=p_cod_emp;
+end if;
+-- Eliminacion
+if p_modo='E'
+then 
+delete from Tabla_Empleados
+where cod_emp=p_cod_emp;
+end if;
+
+end
+//
+
+delimiter ;
+
+call SP_Empleados('0','admin','admin','Administrador','HN','Col. X','Mañana','ADM',0,0.0,'I');

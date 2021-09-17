@@ -15,6 +15,7 @@ if (!isset($_SESSION['usuario'])) {
         $residencia = "";
         $cant_ventas = "";
         $cant_din_ventas = "";
+        $tipo = "";
 
         if (isset($_GET['ID'])) {
             $query2 = "select * from tabla_empleados where cod_emp='" . $_GET['ID'] . "'";
@@ -29,6 +30,7 @@ if (!isset($_SESSION['usuario'])) {
                 $residencia = $row2['res_emp'];
                 $cant_ventas = $row2['cant_ventas'];
                 $cant_din_ventas = $row2['cant_din_ventas'];
+                $tipo = $row2['tipo'];
             }
         }
         $query = "select * from tabla_empleados";
@@ -111,7 +113,7 @@ if (!isset($_SESSION['usuario'])) {
                                             break;
                                         case "Tarde";
                                         ?>
-                                            <option disabled ></option>
+                                            <option disabled></option>
                                             <option value="Mañana">Mañana</option>
                                             <option value="Tarde" selected>Tarde</option>
                                     <?php
@@ -128,6 +130,31 @@ if (!isset($_SESSION['usuario'])) {
                             </td>
                         </tr>
                         <tr>
+                            <td><b>Tipo:</b></td>
+                            <td>
+                                <select name="tipo" class="w3-select">
+                                    <?php
+                                    switch ($tipo) {
+                                        case "ADM";
+                                        ?>
+                                            <option disabled></option>
+                                            <option value="ADM" selected>ADM</option>
+                                            <option value="USR">USR</option>
+                                        <?php
+                                            break;
+                                        case "USR";
+                                        ?>
+                                            <option disabled></option>
+                                            <option value="ADM">ADM</option>
+                                            <option value="USR" selected>USR</option>
+                                    <?php
+                                            break;
+                                    }
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><b>Cantidad en Ventas:</b></td>
                             <td>
                                 <input class="w3-input w3-border" type="text" name="cant_ventas" required value="<?php echo $cant_ventas; ?>">
@@ -141,7 +168,7 @@ if (!isset($_SESSION['usuario'])) {
                         </tr>
                     </table>
                     <div>
-                        <a class="w3-button w3-round w3-orange w3-section"  href='mEmpleados.php'>Nuevo</a>
+                        <a class="w3-button w3-round w3-orange w3-section" href='mEmpleados.php'>Nuevo</a>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="I">Agregar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="A">Modificar</button>
                         <button class="w3-button w3-round w3-orange w3-section" type="submit" name="Tipo_Accion" value="E">Eliminar</button>
@@ -161,6 +188,7 @@ if (!isset($_SESSION['usuario'])) {
                             <th>Apellido</th>
                             <th>Residencia</th>
                             <th>Horario</th>
+                            <th>Tipo</th>
                             <th>Cantidad Ventas</th>
                             <th>Cantidad Dinero</th>
                             <th></th>
@@ -168,14 +196,16 @@ if (!isset($_SESSION['usuario'])) {
                         while ($row = $resultado->fetch_assoc()) { ?>
                             <tr>
                                 <td><?php echo $row['cod_emp']; ?> </td>
-                                 <td><?php echo $row['usu_emp']; ?> </td>
-                                 <td><?php echo $row['nom_emp']; ?> </td>
-                                 <td><?php echo $row['ape_emp']; ?> </td>
-                                 <td><?php echo $row['res_emp']; ?> </td>
-                                 <td><?php echo $row['hor_emp']; ?> </td>
-                                 <td><?php echo $row['cant_ventas']; ?> </td>
-                                 <td><?php echo $row['cant_din_ventas']; ?> </td>
-                                <td><center><a href="./mEmpleados.php?ID=<?php echo $row['cod_emp'];?>">Seleccionar</a></center>
+                                <td><?php echo $row['usu_emp']; ?> </td>
+                                <td><?php echo $row['nom_emp']; ?> </td>
+                                <td><?php echo $row['ape_emp']; ?> </td>
+                                <td><?php echo $row['res_emp']; ?> </td>
+                                <td><?php echo $row['hor_emp']; ?> </td>
+                                <td><?php echo $row['tipo']; ?> </td>
+                                <td><?php echo $row['cant_ventas']; ?> </td>
+                                <td><?php echo $row['cant_din_ventas']; ?> </td>
+                                <td>
+                                    <center><a href="./mEmpleados.php?ID=<?php echo $row['cod_emp']; ?>">Seleccionar</a></center>
                                 </td>
                             </tr>
                         <?php }

@@ -20,11 +20,12 @@
     $residencia = $_POST["residencia"];
     $cant_ventas = $_POST["cant_ventas"];
     $cant_din_ventas = $_POST["cant_din_ventas"];
+    $tipo=$_POST["tipo"];
 
     //Iniciamos programaciones
     require "conexion.php";
     try {
-        $query = "CALL SP_Empleados($codigo,'$usuario','$clave','$nombre','$apellido','$residencia','$horario','$cant_ventas','$cant_din_ventas','$Tipo_Accion')";
+        $query = "CALL SP_Empleados($codigo,'$usuario','$clave','$nombre','$apellido','$residencia','$horario','$tipo','$cant_ventas','$cant_din_ventas','$Tipo_Accion')";
         if ($mysqli->query($query)) {
             switch ($Tipo_Accion) {
                 case "I":
