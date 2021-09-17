@@ -8,7 +8,13 @@
             </div>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSolicitudPedidos.php">Solicitud de Pedidos </a>
             <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mControlRBDFrituras.php">Control RBD Frituras</a>
-            <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mVentas.php">Ventas</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Ventas</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="../Formularios/mVentas.php" class="w3-bar-item w3-button">Registrar Ventas</a>
+                    <a href="../Formularios/mDetalleVentas.php" class="w3-bar-item w3-button">Detalle Venta</a>
+                </div>
+            </div>
             <a class="w3_bar-item w3-button w3-hide-small" href="../Formularios/mFreidora.php">Freidora</a>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSuministros.php">Suministros</a>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/manual.php">Manual</a>
@@ -18,7 +24,13 @@
             <div id="demo" class="w3-bar-block w3-orange w3-hide w3-hide-large w3-hide-medium">
                 <a class="w3-bar-item w3-button" href="../Formularios/mSolicitudPedidos.php">Control Mensual </a>
                 <a class="w3-bar-item w3-button" href="../Formularios/mControlRBDFrituras.php">Control RBD Frituras</a>
-                <a class="w3-bar-item w3-button" href="../Formularios/mVentas.php">Ventas</a>
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button">Ventas</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="../Formularios/mVentas.php" class="w3-bar-item w3-button">Registrar Ventas</a>
+                        <a href="../Formularios/mDetalleVentas.php" class="w3-bar-item w3-button">Detalle Venta</a>
+                    </div>
+                </div>
                 <a class="w3-bar-item w3-button" href="../Formularios/Freidoras.php">Freidora</a>
                 <a class="w3-bar-item w3-button" href="../Formularios/Suministros.php">Suministros</a>
                 <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/manual.php">Manual</a>

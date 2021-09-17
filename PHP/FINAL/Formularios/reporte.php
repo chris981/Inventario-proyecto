@@ -12,7 +12,7 @@ if (!isset($_SESSION['usuario'])) {
         tabla_suministros.venc_sum, tabla_empleados.nom_emp from tabla_ventas 
         inner join detalle_ventas on detalle_ventas.factura=tabla_ventas.factura 
         inner join tabla_suministros on tabla_suministros.cod_sum = detalle_ventas.cod_sum 
-        inner join tabla_empleados on tabla_suministros.cod_emp=tabla_empleados.nom_emp";
+        inner join tabla_empleados on tabla_suministros.cod_emp=tabla_empleados.cod_emp";
         $resultado = $mysqli->query($query);
     } catch (Exception $ex) {
     }

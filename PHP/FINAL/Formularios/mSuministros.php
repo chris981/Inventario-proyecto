@@ -61,7 +61,7 @@
                     <tr>
                         <td><b>Codigo Suministro:</b></td>
                         <td>
-                            <input class="w3-input w3-border" type="text" name="cod_sum" value="<?php echo $cod_sum ?>">
+                            <input class="w3-input w3-border" type="text" name="cod_sum" value="<?php echo $cod_sum ?>" readonly>
                         </td>
                     </tr>
                     <tr>
