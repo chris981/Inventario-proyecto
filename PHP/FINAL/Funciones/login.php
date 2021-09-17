@@ -18,6 +18,7 @@
             $ingreso=1;
             $_SESSION['usuario']=$usuario;
             $_SESSION['ID']=$row['cod_emp'];
+            $_SESSION['tipo']=$row['tipo'];
         }
     }
     if($ingreso==1 )

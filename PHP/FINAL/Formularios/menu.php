@@ -3,7 +3,9 @@
             <div class="w3-dropdown-hover">
                 <button class="w3-button">Mantenimiento</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="mEmpleados.php" class="w3-bar-item w3-button">Empleados</a>
+                    <?php  if ($_SESSION['tipo']=="ADM"){ ?>
+                        <a href="mEmpleados.php" class="w3-bar-item w3-button">Empleados</a> 
+                    <?php }?>
                 </div>
             </div>
             <a class="w3-bar-item w3-button w3-hide-small" href="../Formularios/mSolicitudPedidos.php">Solicitud de Pedidos </a>
